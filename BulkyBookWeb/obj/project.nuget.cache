@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yvAadvdrOXY=",
+  "dgSpecHash": "Dp4tS5eID4E=",
   "success": true,
   "projectFilePath": "D:\\After-Job-Second\\ASP.NET CORE MVC Project\\BulkyBook\\BulkyBookWeb\\BulkyBookWeb.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,8 @@
     "C:\\Users\\MY_DELL\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\MY_DELL\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\MY_DELL\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\MY_DELL\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\MY_DELL\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\8.0.28\\microsoft.aspnetcore.mvc.razor.runtimecompilation.8.0.28.nupkg.sha512",
     "C:\\Users\\MY_DELL\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.24\\microsoft.aspnetcore.razor.language.6.0.24.nupkg.sha512",
     "C:\\Users\\MY_DELL\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\MY_DELL\\.nuget\\packages\\microsoft.build\\17.11.48\\microsoft.build.17.11.48.nupkg.sha512",
