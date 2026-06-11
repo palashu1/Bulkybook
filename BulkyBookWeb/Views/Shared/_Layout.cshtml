@@ -7,40 +7,39 @@
     <link rel="stylesheet" href="~/css/bootswatchTheme.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BulkyBookWeb.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <header>
 
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">
+                    <img style="height:40px; border-radius:50px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAB4FBMVEX///+Z2UUlxP7/x1D/PTv9DaSYJMX//v////38/////v3/PTr//f+Y2kUmw/6YJMb/x07/9/8kxfz8DqL+C6f+x07///f/+v//xE+a2Ef7//qGALT0//+XI8WZJMGXIcn/ODOLALvs/fz35vnix+n25rGX0jn3xlLjMp7sAJbgH5fqPDPyKyr0AJf34/mta8Z+AKm+idDd+fuc3e5Yy+02wu+D1u7I8/maGcygVroNufFrzefQqt2RJLbbu+I5wOKZP7qnXr63f8rGl9WucsKy5vKNNLWbR7nh3PKH2+zr0e97YtBJpfQUy/xqWNFfj+SUyL+dcoynooShiI+PNam8xIDLoNiV3z2rymOTUJTzyGnIxneRZI2n1Fmek4Gnw2+634D//en136arwY/A34+osHbw0oOav5Xu8tRku7fNzpOx3W/Q6ajzy3Hd8b47vNX3y3CJvaDSxG/e6JCtw4bnzE/u+div0Uf46MLtnNHaSqPxweLhebXPzkrkjsfiZrDvr9v4xaznkpDOZzGq0kn9wWDyeXjrrLD1knPqMYrxxcLkTk3bXzT6qWzuSoXqnZj44dvgW1jtW3qzyE3WLR3Lij3QcTy8skvEk0DdUTP0tsf7FYjhfX76K1/AokPuv74WsHpqAAATn0lEQVR4nO1dC3sTV3oeX6Q552hGGl0tjSyPZINl2bLBFxkjbCABQuPtJZtd4q232WJCIRTClmwWjE2xSwg0kF2gLCxtKfmr/b4zI1maiyzbD0fieeZ1cIwlg1693+X9zjkzSJIPHz58+PDhw4cPHz58+PDhw4cPHz58+PDhw4cPHz58+PDhw4cPHz58+PCxA7bzmUiyx8P4hfWUDw8EXjSRmSQTEpV02vygLEuKxChlwI9KhDHq8iZ0O1AaQhVdmjpydNr+IKWoGiMzs3OVytz8MUmXP0QVJaQZPZM1Fo5LNg1BQeA4PF+J9SKqJ4aJ/RkfABiDUFxcKgSNwklmewwFHJytxMLhMBCEX6dmUh15kfsEDzhGdOnQ6YIxZBjnd5KMYeZhbkrHKrFYrJdriDxPzTD4Ofs70b0gTNal5Y8KhpEL5gqHaqWSorCEAJdjczGUzkIYmJ6aIZLe2VfdPhj+N/Jx1jAiEdDwI8kqI0BPpoxIZGa+Gm5kCF+GY0CRfSjlBorIwBmITiMYDOYi2WVSoyhLKCAkIIRlAz+g1wsRe2pY/lBaBlFOLi0YkVwwEgkGjbPQ+JiVYCTFBs/xAhpuYsh/Hz413O0aUtRKptLy8YKRywG9IRAxOwLBZ7V0ePjYnBWVDQR7Y2GT8dwwk5jSxTShFkKcTR3JmuphjAYXPjYfkykWmJkT1WZujTSBOFCUu7fcYAsgUnQ6awA7k2AwYixFzVZOFcaG56uxmAc/FBKycW6YdG8uQnCloouYgBY9gFE4wzhDRsjwbKU5+5wUw6gi6V4RCe/wFjeTJUrIiwyjUGDCvd4KYkGNoY5zXVduGDYAXkSmoMAM1dQDIeGjsAgJyKQUdvhYrJWAvNzwz3ODpLuGKSyRkqwT6PALDfEZjAxFgsYnUR1aIBaYWIsMbBQSOM4N6grtIv9GZCgxJPrF0sJOgTFFzIHlJlBC+QgR622dhDWGmIsngGKnaTVBJ9LJTxaMoQg2+QZEFs7LLDWIBaamTzsqgtonKOuiikphhDhfQH7BoVxTmEayhyR67hR3ZO0CNOQUB7slEwlE6NTZrBE0uTUTBMs9M1dtT7kmQEU9MZiSu6AzwjBEscMH3RAJZv/m06rNYrenI0bqiUFweh2nqMhk+fRCJBcZcqNo/KKCEbd3htj6w7F5mup4uQEHuYgWDfuCE7ns3/4dN9R71xA6J7wz87TjuUik6UIEU89dw783x7595CH/kXB1vqOLU0SCnjxdMAw3+dDOGNl/QCvdbo9wUzKMKnZuDQ5GvkUwoW4EUVTDOH2udz/6NQoJucjkjpUbWV/OuicgrzLB7KHhykEpQi4S0qlyA7PgeRyT3DmChscldq56EH7cJsTmTV/fAShksQD1ZSjizjCSXYYcmm3fy7iShAiozhPxFRVyg0gsuuTe6E0sHIE4ZmS22nIibINjLDavu21dvVdAfdMZO1PIeSUh9sJlwghlbLYaPlAu9mKg6kzwvAgMFTaSjXjUUS7hWVyTgkLPDqYiOoZYFVQU3DII/IUfGznDM0xzR6eIzJgM7z0E6gE05BNlrPopE1xtqESmsp4KQvAa0zhz4FoEYQeiyNemwr3VWSp2z4ZJ7Ih3mYGp6WiUWJvX8FTyafVgfREjdZaIXbth0Oy9+AWNocIX9ZcDExBQ7D1QucEfrc5i4RJHUDreslN8EgWnZW0jyYwqZL43fJCmgeNJdVbgaQaZnCy4DhMWCou4R2huI5m7Tvr8QdwNJCMMmdVj4qJUYacNG0PoHLlc0IhgizROK6x2hgTNHRRURufDtXjbD0U+L86JMTcEJVwsOAopLkTlYKAYgqnpkH1VHliSzyrtrSZ6AdqikLVwcMEKG1gyhuxjYc7I/fLzz3/164VgYdqxkUtleli7cGrfk6IpZHVYRKUhuLj2xYKzF+YKn/esrKz85h8XjjiXyAhNrfZpvz11IILhOQH8+KslI0suc+/CP6mZnp7Mype/Y7pjqxolTAPFyv4JhsOVGTGVBiScNoIOSxo5+s8rParak+lZuWitc1rH1ZCusraaTvaltQuV2B67xk59mpshQpbBiaxPHbXJNwTj7sIv1QxoiBi9CORwX5v/AHpTmV7S+vq0vmL6QqV3b/aGL0bCf5Vzg5KY1QyiSGcXbJ0CtyqWfqP2WFBHL+tAy2rPMhrUtR/SfWnkqH1X2Vu54a0Quv0gnkMRspwhp6ayjql+KLLwqxVQkJOE/0OgKjXbxohMuYTALwkUv6rsiSGunFZPzKBhk2VBy6cfGXaGQ5HIr79U61GaQRUJYzvGdK2YBIZJDT4XgeJeGIKVmZvRcUyBMf/95yGMtOxQc7PHpSgjuPA7rDE9JkVUcvRyCr0Mng+CLLyS5hLCLy2ZTn6Fa2ithURnwA/0QQU9B70GVzEYvlfvlx8euaNguZsURJM2tAAS9jQBVQSgjkz6uojsaihqV3dXMWzu6fdWIAEd5zbfH0N8M08WIo1TxRCYtFzh/L+sZJoZZpAiLzcy1a9ojQyhMV7ddbMGNxFB6flhXOwRRVBilNCB00CwMQ9zRmFp8etRG0FO8YbEUvhT6+n0Dj3kyinupiGU0Wv/ui6JPcoHmbVYwFXuBoZGdnpEv67aGeI3Rm9AZSCS/k26r1FC+Ehrt1pvCmMaXruQ1FbXZMYkYesXsqRHlwyTXwRgoIBnRyRyc1TtUe0iYrkBFQldS/Y5GKaTtzDL7KFaNzDh8O+/K2rporYujh5CYV8U6vUFVysKx5exQ2KZcWOIgapIh7U+G5LJdLp41eNoBj+zcerqqlaEN0K7JJAe7sSMLO0U0kiucPokn6ZujLrRq1GULqWTdoqYi8VbrnEK5SVW+exbaCtc6n8TuhDMpGkYC2stAgqMgkEIEvZAr3fVkJebSw4NzWBN3nJNwVj12rdoYpNFDWiuCj3hRqayOcMKUiN7JgpOCivd5ZpXc1fx5nraQRHooQ+/Ze/72CCuXSii94F0RRVXhWmIK7vSWSPHt7SBHxQYxs/VszWTmwdD0PEPZpRqTimLt8BWW9OUdaIIC0zticjwiiiCYL5kMlUw15uMwvnl+p4eu+xJrkbxjxZFZ6QWP6uE6+TAyWGB2XkaJuJhYQxxUPjIwDMXUGAOSaQ2xSu3RzNedcZiqN4pptNpJz1NK2JftCwqSFm59Q2Eb2NZSq8KvMiEUVzlHsICM4CztrkUI0sXW/PjAYwUXUqNpqW15K2K6dDCsWu/Bf2SxYZnprXDAle5CVpuI5c9M8LJybK5RnF7dFd+8HGnz0VFzez+F65VccT9/VdFDWcsrZGhSAll/VABEvDISCNpIqeu16fClpEKKvbZKWpWsCa/uXD1u2+xwDRkKpbTPnA0Il3pxwtZcDBNf6Gs3HTtgy64U3TGaUO42qsQFzP9TUoWaNnI8jTyUxqnbPRrbSi4O8WkvZfA74p9yXUqTkIISInZt34YWO5dWkU9THmgurm3hoBtRDqZ1q6kZJE7hgRPX8i0cTXbstztcFTVFipC37Nz1NC4fk3lzl5zScFytxujnCVS9JTRIaLWYGfwShWo3rLgw1Fk7eEe+Fmt39WFuxIsrjUwBDXFn2+Tpct7ktBS0bPe2KJUu9QQobihLOtUFnvkRL7dTid0qujoi+4arjZIyC93oNG7G5ti8/Ky6j4VeiNj5mIbAoJfa7ghAYEKN7A9HojfE8dOJsrtXRy3B3anqOFMAX7NZChLOqE63RyLJxIlcRpi1LRhud2gvtxNwiQEcnq9dkAIpjRKlzcmA/FEYIsKYwgS3vRcnGlNMNPz796d3xIR/Bo2X7PbUzqyVUokAoFEaVlcMZUJWO59SQgY/aOLh2kCl9B0UIxG75cCiHh8S6TDUXafmrxE7Ol5WNSahiR7lPZpV9BBQSrINLo9Hg/ARzwRL03Zbx7yHiHLN/YtIVjUP6zi7OvJUCt+LSnoYnRpc2zSEhAKKRV4w4W2Rnsvhhn14voPSe9ITYKEhCgKFph4wEQiHiiN6LLIi/Uvtj02ORiq6nVpvdiCYHGNgoZ06l4pUWMIIt4373cjDJf3KyF0ffU6oetFrzDVtEtEZnQECwyWUAvjI1QkQyJbY8V+YjWjXoY/Yj2dTjqXUPnUtCZTdDAo4I6Gdynf5hbFkCprGb4bs69QHb2JXe5wMu1IRn7mBiw3FJgEtvg6v8R4VOwF7HIKB4u92tKahA9TBKeEw45pUUM7s5pa3iiBgHX5OMVtwbMw1WW0pXseLjjD0Rt8UUSnl9J2d5OGJvIf4GCg+wUSgQaOYwOiryqh7MH3D703K1pB/TKFMzuerzicbNrfxyj94VGJs2viF5gUZLnxTDreeUyR2OOJfOinh3ytdI/JmIEstG6xRAmqiLHK6yp8XfzPHxO8ve/UmARamg2ZCLkaAc81KzJ04idPy6H+/tBPd1Qu456yUb1uLYLKjOm83Fj2psYvEWgCysktt5goBaNI6fNHyA8Y5kFF3uD2QhAktE42USmFgcrLDYyExT/9madfPBCwc9zCjQQRDMEzAb+35TznFwKaQFHdW5RCt7d2PPiiC5MgUHFfHxMQ9UrEEw6CpSm8e50Yx0aVZxOcHzKEX/1YbvbEcPS2UrcmuOuqSJdgzEgn//RjImHNEM0E4Rv3sNG//9EQjBSVfjYT0FIQY/X7TM9eAlW9KDUdHwGSWG6KjybtsVmXMF4aMe+c8r4ZEjr4/EU5H+q3wWoa7eiYgUJ62/bH4o3NLv3wX/bQbBTxvphOQdngc+gQToacosd5GmeMXrYrwSjRR350lpcdgF8T4kbhlb1woWflotpelKoP12wvlhFFj26gh/HiCH5NFnMdMI2WzcxzAim2Y+AyKzfsw4FMdenepLO+7GBsQKZibvvJGfa7kgx939YGhqq+TOGLbSJJ9c1JzyRMJBLg1wTN9fDKXuQ9RIRAbWN1WO15+ZdneLcl2vCaqRwd8ySIrXFD3M3piPTE6hQuDPt3s+EZXJ55lS8/w/OijaKQu559AkUUZbn53bwG6ONy3jUPeS5mWs5SYHzUlxP9IaCokIbNeTpSCnimIJSfLYFrwDDPAUVuZVw07O9/nWklIvrz1/hEoNj0zt1v0Sfi8dKy2MmeSo9rlsZFxdeWiu6dAyTklQpVpHgMSOY72CChh4bcwQld5ZawO9Nn5X5XGRGvMqYJd2WoZr63nlZ+BgT5wQeq0HuefRCnqNKU6Bu2wvv+zLPchICiZy5mVv5afyaqCKMmTNL6csk5S+wwBL/GxF2JwEFhgkGKHiKaFF05qg9/sn7KzEUF76DFpK14i2YfHx+hou/1xQv9g7KXhiZFt0Lao76rKw9jSfkZv1m7vlnyLjOBwORdQWbGgQflfo9kDJXf9DhlzEDtefjfTW9L+TFYeSZveLKD2E2MRztCDy+bfNCi3LxBSk0McYNDfdMc2qHyY0r17RbNPp6YFL1EWgMeanlQ9spEoKg6U1F9OGErT6HyExodbzU0BQQ2ewdFhVP0sKj9b+y5CH7tTTNB+Dr/lG3Hve1MPDA+0rFbfPGLcT1VhG+/s3VEFf2anWF/+X/GEglvinjsopN3o6NI0atrlN/gen9mJ1jVVy5vRP7PXn0igXatU0m4Q5G89Wr9tVysM+QS2vjBD/6vV6uHFlna7vhNdinzpoi5aKpo2ZnXzmeE8v8Xj9uXt2sEA+Ob5nHETkKhVHrruayBuVhvi3xqslPMP/0R/Jq7ipMbU7rc2SyUzIvsydtyPeQcKr6DNoitHgrp64Zvm5/z5QemnWngaG3HJDAFwZLzv6SzHDFS3+ZDXq2//E7Fi7uB4kv7W5AvP3oubTjKaIIfKSndG5HEne3aBWCdH+W9y81fVzK4AsenJks9vlhefvpEotuTjjqKeTm5NUUFXti8K6g+8Mh1DZWzmXin4jT8qknCUH7iZ7xb31jcOTUlJjc2Kb/HtdBzMy0AnZ8qj7yWbkL9E69e3nn5aicBgXV+4sEADtIooX0HZnJsW4Fpydpc7DQ5E1BuKHuRNwmE7ATxGxO1IA6ZCfj2OYUhk0THG2pMgleYQOlulN9XoAvu/twEmVP0lLH2GQtSvvziOTAAP03vTtYJQrTitigUGCr87o/tgVMMeU9TfOLFvbj8058J/hNkIOFIqU4wEecFZmMZ/3GPLsk+G4hCOEVvhvyh/MQzxTzUBKXyXjxeKzS4bz85tonlU+lKfrityOiAd6BaKVl+O0CxMuGNAelUiZ934pUGO+D2AN/gJaTzdyd3Bwz9UWvjzWHOLAcDHR5zzLwNCN3C1OO1FBcM70dpp26iuxcMPA2ZG9/OUoMdvsGkyPpyyeoUEKqlrSmpixq8N2SaeuoeqPn8xOMUbbJhW3Fuz+JosZdp52+63h4gF5+67L1hh2fmpX010M2SZbEnxzf5iVGRF1HuH9DHkWLIxo93eDxJVdcQVxAT5hSPHR4kJN3W4r3x/Glz0+Advgk6UN2c5KeecIT44ECf7wQqVJ08jhDNzyBUio5Bo4AOP9U1E1L7ALfy3AxUJAkFhkmOa+llgovA2OH1DyT9mgBVEY8UYajCDA/8HOud8PutQHx8ewAPl34gNbQBeLvgQenJ24lyeeLBcwhC6rAo6LnHoMPzK0M+PAnrUDr+D6e8b3TnhODDhw8fPnz48OHDhw8fPnz48OHDhw8fPnz48OHDhw8fPnz48OHDhw8fProe/w+NFZ3yIDf2/wAAAABJRU5ErkJggg==" alt="Alternate Text" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Category" asp-action="Index">Category</a>
+                            <a class="nav-link" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </li>
+
+                        @*  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        </li> *@
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-sm-2" type="search" placeholder="Search">
@@ -50,34 +49,15 @@
             </div>
         </nav>
 
-
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BulkyBookWeb</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                           
-                        </li>
-                        <li class="nav-item">
-                           
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <partial name="_Notification" />
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted bg-dark">
         <div class="container">
             &copy; 2026 - BulkyBookWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
