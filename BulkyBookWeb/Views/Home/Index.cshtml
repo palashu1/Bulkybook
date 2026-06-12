@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="main-t"  style="display:flex; align-items:center; justify-content: space-between; margin-top:50px; max-width:100%; max-height:100%;">
+    <div style="display:flex; flex-direction:column; gap:5rem;">
+        <div>
+            <h2 style="font-weight:bold; font-size:5rem; color:#fff">
+                Category
+            </h2>
+            <h2 class="text-danger" style="font-size:4rem; font-style:italic">Management System</h2>
+            <p style="width:30rem; margin-top:20px; color:white">
+                Organize and manage your categories through a simple and efficient dashboard.
+                Create, update, and maintain category records with ease.
+            </p>
+        </div>
+        <div>
+            <a id="h-btn" asp-controller="Category" asp-action="Index" style="font-weight:600; border-radius:50px; border:1px solid white; padding:10px 15px; text-decoration:none; ">Category</a>
+        </div>
+       
+    </div>
+    <div">
+        <img style=" height:450px; border-radius:50px;" src="https://images.openai.com/static-rsc-4/OtQojsGN3EgkT50vE4YJ5zC1EuHKdgzRHk8QhZ0qddkNhzb4w9oQeAsoTG2yjkvdwk8gupXI9WwMYMMfox9XYsxVTl__4DiMTJDamK06AuL5SQUw0NkgNgrVLVnGBr_vfMqSAii3sTINEK9lGr3EXjCzixDS4UVKBxPfKjMTmWDf1FaxVYpxlCg9xfS5qkac?purpose=fullsize" alt="Alternate Text" />
+    </div>
 </div>

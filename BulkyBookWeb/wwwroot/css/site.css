@@ -20,3 +20,35 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#nav-right{
+    display:flex;
+    align-items: center;
+    gap:2rem;
+}
+
+#nav-right a{
+   text-decoration:none;
+   border: 1px solid black;
+   padding: 0.3rem 1rem;
+   border-radius:50px;
+   color:whitesmoke;
+}
+
+#nav-right a:hover{
+    color: black;
+    background-color:whitesmoke;
+}
+
+#h-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 982px){
+    #main-t{
+       display:flex;
+       flex-direction:column;
+       gap:80px;
+    }
+}
