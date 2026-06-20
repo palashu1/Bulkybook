@@ -6,6 +6,11 @@ BulkyBook is a Category Management web application built using ASP.NET Core MVC 
 
 The project demonstrates the implementation of CRUD operations, database integration, cloud deployment, and modern web development practices using Microsoft's technology stack.
 
+
+## Live Demo
+
+https://bulkybookwebcat.azurewebsites.net/
+
 ---
 
 ## Features
